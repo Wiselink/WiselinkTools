@@ -1,4 +1,4 @@
-module WiselinkTools
+module github.com/Wiselink/WiselinkTools
 
 go 1.19
 
