@@ -1,8 +1,9 @@
 package status
 
 import (
-	"WiselinkTools/pkg/domain/response"
 	"net/http"
+
+	"github.com/Wiselink/WiselinkTools/pkg/domain/response"
 )
 
 func ResponseCase(w *http.ResponseWriter, status response.Status, data interface{}) {

@@ -1,8 +1,9 @@
 package status
 
 import (
-	"WiselinkTools/pkg/domain/response"
 	"encoding/json"
+
+	"github.com/Wiselink/WiselinkTools/pkg/domain/response"
 )
 
 func ResponseBuilder(status int, message string, data interface{}) ([]byte, error) {

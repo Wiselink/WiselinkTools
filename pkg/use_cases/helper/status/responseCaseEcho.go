@@ -1,8 +1,9 @@
 package status
 
 import (
-	"WiselinkTools/pkg/domain/response"
 	"net/http"
+
+	"github.com/Wiselink/WiselinkTools/pkg/domain/response"
 
 	"github.com/labstack/echo/v4"
 )
