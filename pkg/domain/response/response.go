@@ -31,6 +31,9 @@ const (
 	BuilderResponseError
 	NoContent
 	NoRowsAffected
+	UpdateFailure
+	FormatInvalid
+	ItemAlreadyShared
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -64,6 +67,9 @@ func (s Status) String() string {
 		"BuilderResponseError",
 		"NoContent",
 		"NoRowsAffected",
+		"UpdateFailure",
+		"FormatInvalid",
+		"ItemAlreadyShared",
 	}[s]
 }
 
