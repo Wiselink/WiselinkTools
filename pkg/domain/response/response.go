@@ -73,7 +73,7 @@ func (s Status) String() string {
 		"FormatInvalid",
 		"ItemAlreadyShared",
 		"LineHasReferences",
-		"ItemIsInterested"
+		"ItemIsInterested",
 	}[s]
 }
 
