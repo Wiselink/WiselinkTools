@@ -50,7 +50,7 @@ func ResponseCase(w *http.ResponseWriter, status response.Status, data interface
 		(*w).WriteHeader(http.StatusUnauthorized)
 		(*w).Write([]byte(responseWriter))
 		return
-	case response.Conflict, response.NoRowsAffected:
+	case response.Conflict, response.NoRowsAffected, response.LineHasReferences, response.ItemAlreadyShared, response.ItemIsInterested, response.FormatInvalid, response.NoResults:
 		(*w).WriteHeader(http.StatusConflict)
 		(*w).Write([]byte(responseWriter))
 		return
