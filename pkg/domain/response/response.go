@@ -36,6 +36,13 @@ const (
 	ItemAlreadyShared
 	LineHasReferences
 	ItemIsInterested
+	NameInUse
+	NumberAndVersionAlreadyExists
+	BudgetInUse
+	AmountNotNull
+	BusinessClosedOrLost
+	ActiveStageInBusiness
+	ActivePipelineInBusiness
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -74,6 +81,13 @@ func (s Status) String() string {
 		"ItemAlreadyShared",
 		"LineHasReferences",
 		"ItemIsInterested",
+		"NameInUse",
+		"NumberAndVersionAlreadyExists",
+		"BudgetInUse",
+		"AmountNotNull",
+		"BusinessClosedOrLost",
+		"ActiveStageInBusiness",
+		"ActivePipelineInBusiness",
 	}[s]
 }
 
