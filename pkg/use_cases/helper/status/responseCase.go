@@ -50,7 +50,26 @@ func ResponseCase(w *http.ResponseWriter, status response.Status, data interface
 		(*w).WriteHeader(http.StatusUnauthorized)
 		(*w).Write([]byte(responseWriter))
 		return
-	case response.Conflict, response.NoRowsAffected, response.LineHasReferences, response.ItemAlreadyShared, response.ItemIsInterested, response.FormatInvalid, response.NoResults:
+		/*
+			NameInUse
+			NumberAndVersionAlreadyExists
+			BudgetInUse
+			AmountNotNull
+			BusinessClosedOrLost
+			ActiveStageInBusiness
+			ActivePipelineInBusiness
+			DontHaveLineAndPipeline
+			DontHaveLine
+			DontHavePipeline
+
+			case response.Conflict, response.NoRowsAffected, response.LineHasReferences, response.ItemAlreadyShared, response.ItemIsInterested, response.FormatInvalid, response.NoResults:
+				(*w).WriteHeader(http.StatusConflict)
+				(*w).Write([]byte(responseWriter))
+				return
+		*/
+	case response.Conflict, response.NoRowsAffected, response.LineHasReferences, response.ItemAlreadyShared, response.ItemIsInterested, response.FormatInvalid, response.NoResults,
+		response.NameInUse, response.NumberAndVersionAlreadyExists, response.BudgetInUse, response.AmountNotNull, response.BusinessClosedOrLost, response.ActiveStageInBusiness,
+		response.ActivePipelineInBusiness, response.DontHaveLineAndPipeline, response.DontHaveLine, response.DontHavePipeline:
 		(*w).WriteHeader(http.StatusConflict)
 		(*w).Write([]byte(responseWriter))
 		return
