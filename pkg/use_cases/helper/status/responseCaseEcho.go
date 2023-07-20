@@ -31,7 +31,7 @@ func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) 
 			"message": status.String(),
 			"data":    respData,
 		})
-	case response.InternalServerError, response.DBQueryError, response.DBRowsAffectedError, response.DBExecutionError, response.DBRowsError, response.DBScanError, response.DBInitError, response.DecodeError, response.LastRowIdError, response.CreationFailure, response.ErrorMappingData:
+	case response.InternalServerError, response.DBQueryError, response.DBRowsAffectedError, response.DBExecutionError, response.DBRowsError, response.DBScanError, response.DBInitError, response.DecodeError, response.LastRowIdError, response.CreationFailure, response.UpdateFailure, response.ErrorMappingData:
 		return c.JSON(http.StatusInternalServerError, echo.Map{
 			"status":  status.Index(),
 			"message": status.String(),
