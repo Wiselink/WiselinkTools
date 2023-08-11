@@ -47,6 +47,7 @@ const (
 	DontHaveLine
 	DontHavePipeline
 	AnotherEditionIsActive
+	FirstCreateASchedule
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -96,6 +97,7 @@ func (s Status) String() string {
 		"DontHaveLine",
 		"DontHavePipeline",
 		"AnotherEditionIsActive",
+		"FirstCreateASchedule",
 	}[s]
 }
 
