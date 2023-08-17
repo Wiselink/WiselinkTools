@@ -26,7 +26,7 @@ func ResponseCase(w *http.ResponseWriter, status response.Status, data interface
 	}
 
 	switch status {
-	case response.SuccessfulSearch, response.SuccessfulUpdate, response.SuccessfulDeletion, response.NotFound, response.NothingToDelete:
+	case response.SuccessfulSearch, response.SuccessfulUpdate, response.SuccessfulDeletion, response.NotFound, response.NothingToDelete, response.Authorized:
 		(*w).WriteHeader(http.StatusOK)
 		(*w).Write(responseWriter)
 		return
