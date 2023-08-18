@@ -49,6 +49,7 @@ const (
 	AnotherEditionIsActive
 	FirstCreateASchedule
 	Authorized
+	AccreditationInUse
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -100,6 +101,7 @@ func (s Status) String() string {
 		"AnotherEditionIsActive",
 		"FirstCreateASchedule",
 		"Authorized",
+		"AccreditationInUse",
 	}[s]
 }
 

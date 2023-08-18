@@ -53,7 +53,7 @@ func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) 
 		})
 	case response.Conflict, response.NoRowsAffected, response.LineHasReferences, response.ItemAlreadyShared, response.ItemIsInterested, response.FormatInvalid, response.NoResults,
 		response.NameInUse, response.NumberAndVersionAlreadyExists, response.BudgetInUse, response.AmountNotNull, response.BusinessClosedOrLost, response.ActiveStageInBusiness,
-		response.ActivePipelineInBusiness, response.DontHaveLineAndPipeline, response.DontHaveLine, response.DontHavePipeline, response.AnotherEditionIsActive, response.FirstCreateASchedule:
+		response.ActivePipelineInBusiness, response.DontHaveLineAndPipeline, response.DontHaveLine, response.DontHavePipeline, response.AnotherEditionIsActive, response.FirstCreateASchedule, response.AccreditationInUse:
 		return c.JSON(http.StatusConflict, echo.Map{
 			"status":  status.Index(),
 			"message": status.String(),
