@@ -56,6 +56,8 @@ const (
 	DoesntMatch
 	UserDoesntExist
 	Found
+	NothingToUpdate
+	EmailDoesntExist
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -114,6 +116,8 @@ func (s Status) String() string {
 		"DoesntMatch",
 		"UserDoesntExist",
 		"Found",
+		"NothingToUpdate",
+		"EmailDoesntExist",
 	}[s]
 }
 
