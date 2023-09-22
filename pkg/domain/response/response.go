@@ -53,6 +53,7 @@ const (
 	ContactDataAlreadyExists
 	ContactDataDoesntExist
 	EmailAlreadyExists
+	DoesntMatch
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -108,6 +109,7 @@ func (s Status) String() string {
 		"ContactDataAlreadyExists",
 		"ContactDataDoesntExist",
 		"EmailAlreadyExists",
+		"DoesntMatch",
 	}[s]
 }
 
