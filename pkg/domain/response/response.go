@@ -52,6 +52,7 @@ const (
 	AccreditationInUse
 	ContactDataAlreadyExists
 	ContactDataDoesntExist
+	EmailAlreadyExists
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -106,6 +107,7 @@ func (s Status) String() string {
 		"AccreditationInUse",
 		"ContactDataAlreadyExists",
 		"ContactDataDoesntExist",
+		"EmailAlreadyExists",
 	}[s]
 }
 
