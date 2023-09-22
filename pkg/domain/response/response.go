@@ -59,6 +59,11 @@ const (
 	NothingToUpdate
 	EmailDoesntExist
 	SuccessfulLogin
+	InvalidNameFormat
+	InvalidLastNameFormat
+	InvalidEmailFormat
+	ErrorGeneratingUuid
+	WrongType
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -120,6 +125,11 @@ func (s Status) String() string {
 		"NothingToUpdate",
 		"EmailDoesntExist",
 		"SuccessfulLogin",
+		"InvalidNameFormat",
+		"InvalidLastNameFormat",
+		"InvalidEmailFormat",
+		"ErrorGeneratingUuid",
+		"WrongType",
 	}[s]
 }
 
