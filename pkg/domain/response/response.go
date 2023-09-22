@@ -58,6 +58,7 @@ const (
 	Found
 	NothingToUpdate
 	EmailDoesntExist
+	SuccessfulLogin
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -118,6 +119,7 @@ func (s Status) String() string {
 		"Found",
 		"NothingToUpdate",
 		"EmailDoesntExist",
+		"SuccessfulLogin",
 	}[s]
 }
 
