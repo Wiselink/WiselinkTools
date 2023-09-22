@@ -19,7 +19,7 @@ func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) 
 	}
 
 	switch status {
-	case response.SuccessfulSearch, response.SuccessfulUpdate, response.SuccessfulDeletion, response.NotFound, response.NothingToDelete, response.Authorized, response.ContactDataDoesntExist, response.ContactDataAlreadyExists, response.EmailAlreadyExists, response.DoesntMatch:
+	case response.SuccessfulSearch, response.SuccessfulUpdate, response.SuccessfulDeletion, response.NotFound, response.NothingToDelete, response.Authorized, response.ContactDataDoesntExist, response.ContactDataAlreadyExists, response.EmailAlreadyExists, response.DoesntMatch, response.Found:
 		return c.JSON(http.StatusOK, echo.Map{
 			"status":  status.Index(),
 			"message": status.String(),
