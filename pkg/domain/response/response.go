@@ -64,6 +64,8 @@ const (
 	InvalidEmailFormat
 	ErrorGeneratingUuid
 	WrongType
+	GRPCClientsError
+	GRPCServerError
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -130,6 +132,8 @@ func (s Status) String() string {
 		"InvalidEmailFormat",
 		"ErrorGeneratingUuid",
 		"WrongType",
+		"GRPCClientsError",
+		"GRPCServerError",
 	}[s]
 }
 
