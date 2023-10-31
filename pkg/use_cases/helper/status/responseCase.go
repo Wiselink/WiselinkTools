@@ -35,7 +35,8 @@ func ResponseCase(w *http.ResponseWriter, status response.Status, data interface
 		(*w).WriteHeader(http.StatusCreated)
 		(*w).Write(responseWriter)
 		return
-	case response.InternalServerError, response.DBQueryError, response.DBRowsAffectedError, response.DBExecutionError, response.DBRowsError, response.DBScanError, response.DBInitError, response.DecodeError, response.LastRowIdError, response.CreationFailure, response.UpdateFailure, response.ErrorMappingData:
+	case response.InternalServerError, response.DBQueryError, response.DBRowsAffectedError, response.DBExecutionError, response.DBRowsError, response.DBScanError, response.DBInitError, response.DecodeError, response.LastRowIdError, response.CreationFailure, response.UpdateFailure, response.ErrorMappingData,
+		response.NoBudgetProperties, response.NoBusinessProperties, response.NoProfileProperties, response.NoEditableCounterpartProps, response.WrongProperties, response.WithoutCondition:
 		(*w).WriteHeader(http.StatusInternalServerError)
 		(*w).Write(responseWriter)
 		return

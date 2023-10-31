@@ -66,6 +66,13 @@ const (
 	WrongType
 	GRPCClientsError
 	GRPCServerError
+	NoBudgetProperties
+	NoProfileProperties
+	NoBusinessProperties
+	NoEditableCounterpartProps
+	WrongProperties
+	WrongTypeOfProperties
+	WithoutCondition
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -134,6 +141,13 @@ func (s Status) String() string {
 		"WrongType",
 		"GRPCClientsError",
 		"GRPCServerError",
+		"NoBudgetProperties",
+		"NoProfileProperties",
+		"NoBusinessProperties",
+		"NoEditableCounterpartProps",
+		"WrongProperties",
+		"WrongTypeOfProperties",
+		"WithoutCondition",
 	}[s]
 }
 
