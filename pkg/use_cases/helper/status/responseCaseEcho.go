@@ -19,8 +19,8 @@ func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) 
 	}
 
 	switch status {
-	case response.SuccessfulSearch, response.SuccessfulUpdate, response.SuccessfulDeletion, response.NotFound, response.NothingToDelete, response.Authorized, response.ContactDataDoesntExist, response.ContactDataAlreadyExists, response.EmailAlreadyExists, response.DoesntMatch, response.Found,
-		response.UserDoesntExist, response.NothingToUpdate, response.EmailDoesntExist, response.SuccessfulLogin, response.InvalidNameFormat, response.InvalidLastNameFormat, response.InvalidEmailFormat, response.ErrorGeneratingUuid, response.WrongType:
+	case response.SuccessfulSearch, response.SuccessfulUpdate, response.SuccessfulDeletion, response.NotFound, response.NothingToDelete, response.Authorized, response.ContactDataDoesntExist, response.ContactDataAlreadyExists, response.EmailAlreadyExists, response.DoesntMatch,
+		response.Found, response.UserDoesntExist, response.NothingToUpdate, response.EmailDoesntExist, response.SuccessfulLogin, response.InvalidNameFormat, response.InvalidLastNameFormat, response.InvalidEmailFormat, response.ErrorGeneratingUuid, response.WrongType:
 		return c.JSON(http.StatusOK, echo.Map{
 			"status":  status.Index(),
 			"message": status.String(),
@@ -33,7 +33,7 @@ func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) 
 			"data":    respData,
 		})
 	case response.InternalServerError, response.DBQueryError, response.DBRowsAffectedError, response.DBExecutionError, response.DBRowsError, response.DBScanError, response.DBInitError, response.DecodeError, response.LastRowIdError, response.CreationFailure, response.UpdateFailure, response.ErrorMappingData,
-		response.NoBudgetProperties, response.NoBusinessProperties, response.NoProfileProperties, response.NoEditableCounterpartProps, response.WrongProperties, response.WithoutCondition:
+		response.GRPCServerError, response.GRPCClientsError:
 		return c.JSON(http.StatusInternalServerError, echo.Map{
 			"status":  status.Index(),
 			"message": status.String(),
@@ -55,7 +55,9 @@ func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) 
 		})
 	case response.Conflict, response.NoRowsAffected, response.LineHasReferences, response.ItemAlreadyShared, response.ItemIsInterested, response.FormatInvalid, response.NoResults,
 		response.NameInUse, response.NumberAndVersionAlreadyExists, response.BudgetInUse, response.AmountNotNull, response.BusinessClosedOrLost, response.ActiveStageInBusiness,
-		response.ActivePipelineInBusiness, response.DontHaveLineAndPipeline, response.DontHaveLine, response.DontHavePipeline, response.AnotherEditionIsActive, response.FirstCreateASchedule, response.AccreditationInUse:
+		response.ActivePipelineInBusiness, response.DontHaveLineAndPipeline, response.DontHaveLine, response.DontHavePipeline, response.AnotherEditionIsActive, response.FirstCreateASchedule,
+		response.AccreditationInUse, response.WrongTypeOfProperties, response.OnePropertyByStage, response.NoBudgetProperties, response.NoBusinessProperties, response.NoProfileProperties,
+		response.NoEditableCounterpartProps, response.WrongProperties, response.WithoutCondition:
 		return c.JSON(http.StatusConflict, echo.Map{
 			"status":  status.Index(),
 			"message": status.String(),

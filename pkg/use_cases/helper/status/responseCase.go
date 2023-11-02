@@ -36,7 +36,7 @@ func ResponseCase(w *http.ResponseWriter, status response.Status, data interface
 		(*w).Write(responseWriter)
 		return
 	case response.InternalServerError, response.DBQueryError, response.DBRowsAffectedError, response.DBExecutionError, response.DBRowsError, response.DBScanError, response.DBInitError, response.DecodeError, response.LastRowIdError, response.CreationFailure, response.UpdateFailure, response.ErrorMappingData,
-		response.NoBudgetProperties, response.NoBusinessProperties, response.NoProfileProperties, response.NoEditableCounterpartProps, response.WrongProperties, response.WithoutCondition:
+		response.GRPCServerError, response.GRPCClientsError:
 		(*w).WriteHeader(http.StatusInternalServerError)
 		(*w).Write(responseWriter)
 		return
@@ -55,7 +55,8 @@ func ResponseCase(w *http.ResponseWriter, status response.Status, data interface
 	case response.Conflict, response.NoRowsAffected, response.LineHasReferences, response.ItemAlreadyShared, response.ItemIsInterested, response.FormatInvalid, response.NoResults,
 		response.NameInUse, response.NumberAndVersionAlreadyExists, response.BudgetInUse, response.AmountNotNull, response.BusinessClosedOrLost, response.ActiveStageInBusiness,
 		response.ActivePipelineInBusiness, response.DontHaveLineAndPipeline, response.DontHaveLine, response.DontHavePipeline, response.AnotherEditionIsActive, response.FirstCreateASchedule,
-		response.AccreditationInUse, response.GRPCServerError, response.GRPCClientsError:
+		response.AccreditationInUse, response.WrongTypeOfProperties, response.OnePropertyByStage, response.NoBudgetProperties, response.NoBusinessProperties, response.NoProfileProperties,
+		response.NoEditableCounterpartProps, response.WrongProperties, response.WithoutCondition:
 		(*w).WriteHeader(http.StatusConflict)
 		(*w).Write([]byte(responseWriter))
 		return

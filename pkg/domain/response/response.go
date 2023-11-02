@@ -73,6 +73,7 @@ const (
 	WrongProperties
 	WrongTypeOfProperties
 	WithoutCondition
+	OnePropertyByStage
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -148,6 +149,7 @@ func (s Status) String() string {
 		"WrongProperties",
 		"WrongTypeOfProperties",
 		"WithoutCondition",
+		"OnePropertyByStage",
 	}[s]
 }
 
