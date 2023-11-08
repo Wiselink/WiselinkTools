@@ -46,6 +46,7 @@ const (
 	DontHaveLineAndPipeline
 	DontHaveLine
 	DontHavePipeline
+	DontHaveAccountOwner
 	AnotherEditionIsActive
 	FirstCreateASchedule
 	Authorized
@@ -122,6 +123,7 @@ func (s Status) String() string {
 		"DontHaveLineAndPipeline",
 		"DontHaveLine",
 		"DontHavePipeline",
+		"DontHaveAccountOwner",
 		"AnotherEditionIsActive",
 		"FirstCreateASchedule",
 		"Authorized",
