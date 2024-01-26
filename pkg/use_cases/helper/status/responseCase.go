@@ -48,7 +48,7 @@ func ResponseCase(w *http.ResponseWriter, status response.Status, data interface
 		(*w).WriteHeader(http.StatusBadRequest)
 		(*w).Write([]byte(responseWriter))
 		return
-	case response.Unauthorized:
+	case response.Unauthorized, response.PermissionDenied:
 		(*w).WriteHeader(http.StatusUnauthorized)
 		(*w).Write([]byte(responseWriter))
 		return

@@ -47,7 +47,7 @@ func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) 
 			"message": status.String(),
 			"data":    respData,
 		})
-	case response.Unauthorized:
+	case response.Unauthorized, response.PermissionDenied:
 		return c.JSON(http.StatusUnauthorized, echo.Map{
 			"status":  status.Index(),
 			"message": status.String(),
