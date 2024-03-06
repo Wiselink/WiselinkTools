@@ -76,6 +76,7 @@ const (
 	WithoutCondition
 	OnePropertyByStage
 	PermissionDenied
+	BusinessNotInProgress
 )
 
 // LOS STATUS DEBEN MANTENER SU ORDEN. LOS NUEVOS DEBEN SER AGREGADOS AL FINAL
@@ -154,6 +155,7 @@ func (s Status) String() string {
 		"WithoutCondition",
 		"OnePropertyByStage",
 		"PermissionDenied",
+		"BusinessNotInProgress",
 	}[s]
 }
 

@@ -57,7 +57,7 @@ func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) 
 		response.NameInUse, response.NumberAndVersionAlreadyExists, response.BudgetInUse, response.AmountNotNull, response.BusinessClosedOrLost, response.ActiveStageInBusiness,
 		response.ActivePipelineInBusiness, response.DontHaveLineAndPipeline, response.DontHaveLine, response.DontHavePipeline, response.DontHaveAccountOwner, response.AnotherEditionIsActive, response.FirstCreateASchedule,
 		response.AccreditationInUse, response.WrongTypeOfProperties, response.OnePropertyByStage, response.NoBudgetProperties, response.NoBusinessProperties, response.NoProfileProperties,
-		response.NoEditableCounterpartProps, response.WrongProperties, response.WithoutCondition:
+		response.NoEditableCounterpartProps, response.WrongProperties, response.WithoutCondition, response.BusinessNotInProgress:
 		return c.JSON(http.StatusConflict, echo.Map{
 			"status":  status.Index(),
 			"message": status.String(),
