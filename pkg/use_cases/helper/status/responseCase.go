@@ -1,10 +1,27 @@
 package status
 
 import (
+	"encoding/json"
+	"log"
 	"net/http"
 
 	"github.com/Wiselink/WiselinkTools/pkg/domain/response"
 )
+
+func ResponseCasev2(w *http.ResponseWriter, r response.Response) {
+
+	if r.Resp == nil {
+		marshalResponse, err := json.Marshal(r)
+		if err != nil {
+			log.Println(" ResponseCasev2", err.Error())
+		}
+		(*w).WriteHeader(r.Status)
+		(*w).Write(marshalResponse)
+	} else {
+		ResponseCase(w, *r.Resp, r.Data)
+	}
+
+}
 
 func ResponseCase(w *http.ResponseWriter, status response.Status, data interface{}) {
 

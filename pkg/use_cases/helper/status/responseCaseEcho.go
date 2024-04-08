@@ -8,6 +8,15 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+func ResponseCaseEchov2(c echo.Context, r response.Response) error {
+	if r.Resp == nil {
+		return c.JSON(r.Status, r)
+	} else {
+		return ResponseCaseEcho(c, *r.Resp, r.Data)
+	}
+
+}
+
 func ResponseCaseEcho(c echo.Context, status response.Status, data interface{}) error {
 
 	var respData interface{}
