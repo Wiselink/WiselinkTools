@@ -21,9 +21,10 @@ func ResponseBuilder(status int, message string, data interface{}) ([]byte, erro
 
 }
 
-func ResponseStaNdard(s response.Status) response.Response {
+func ResponseStaNdard(s response.Status, data interface{}) response.Response {
 	return response.Response{
 		Resp: &s,
+		Data: data,
 	}
 }
 func ResponseCustom(status int, message string, data interface{}) response.Response {
