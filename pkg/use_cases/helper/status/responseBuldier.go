@@ -33,3 +33,23 @@ func ResponseCustom(status int, message string, data interface{}) response.Respo
 		Data:    data,
 	}
 }
+
+func CompareSTatus(resp response.Response, status response.Status) bool {
+	if resp.Resp != nil {
+		if *resp.Resp != status {
+			return true
+		} else {
+			return false
+		}
+	} else {
+
+		if resp.Status < 300 {
+			return false
+		} else {
+			return true
+		}
+
+	}
+	return true
+
+}
