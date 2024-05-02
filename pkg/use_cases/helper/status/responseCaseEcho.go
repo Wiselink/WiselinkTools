@@ -1,6 +1,7 @@
 package status
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/Wiselink/WiselinkTools/pkg/domain/response"
@@ -9,6 +10,9 @@ import (
 )
 
 func ResponseCaseEchov2(c echo.Context, r response.Response) error {
+	if r.Error != nil {
+		log.Println(r.Site, " ", r.Error.Error())
+	}
 	if r.Resp == nil {
 		return c.JSON(r.Status, r)
 	} else {

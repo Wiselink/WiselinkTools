@@ -5,6 +5,8 @@ type Response struct {
 	Message string      `json:"message"`
 	Data    interface{} `json:"data"`
 	Resp    *Status     `json:"resp,omitempty"`
+	Error   error       `json:"error,omitempty"`
+	Site    string
 }
 
 func NewResponse(status int, message string, data interface{}) Response {

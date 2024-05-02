@@ -9,6 +9,10 @@ import (
 )
 
 func ResponseCasev2(w *http.ResponseWriter, r response.Response) {
+	if r.Error != nil {
+		log.Println(r.Site, "  ", r.Error.Error())
+		r.Error = nil
+	}
 
 	if r.Resp == nil {
 		marshalResponse, err := json.Marshal(r)
