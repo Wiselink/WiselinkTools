@@ -53,6 +53,7 @@ type DataActivities struct {
 	TokenInteraction          string `json:"interactionToken"`
 	TokenBudgetVersion        string `json:"tokenBudgetVersion"`
 	TokenBudgetOption         string `json:"tokenBudgetOption"`
+	TokenPreAccreditation     string `json:"tokenPreAccreditation"`
 }
 
 type Budget struct {
@@ -62,21 +63,22 @@ type Budget struct {
 }
 
 type ActivitiesResponse struct {
-	Budget                Budget `json:"budget"`
-	User                  User   `json:"createUser"`
-	TokenNote             string `json:"tokenNote"`
-	InteractionName       string `json:"interactionName"`
-	BusinessName          string `json:"businessName"`
-	TokenBusiness         string `json:"tokenBusiness"`
-	Stages                Stages `json:"stages"`
-	CommunicationToken    string `json:"communicationToken"`
-	StageName             string `json:"stageName"`
-	MeetingName           string `json:"meetingName"`
-	ObjectInteractionName string `json:"objectInteractionName"`
-	BudgetName            string `json:"budgetName"`
-	BudgetVersionNumber   string `json:"budgetVersionNumber"`
-	TaskName              string `json:"taskName"`
-	Item                  Item   `json:"item"`
+	Budget                Budget     `json:"budget"`
+	User                  User       `json:"createUser"`
+	Exposition            Exposition `json:"exposition"`
+	TokenNote             string     `json:"tokenNote"`
+	InteractionName       string     `json:"interactionName"`
+	BusinessName          string     `json:"businessName"`
+	TokenBusiness         string     `json:"tokenBusiness"`
+	Stages                Stages     `json:"stages"`
+	CommunicationToken    string     `json:"communicationToken"`
+	StageName             string     `json:"stageName"`
+	MeetingName           string     `json:"meetingName"`
+	ObjectInteractionName string     `json:"objectInteractionName"`
+	BudgetName            string     `json:"budgetName"`
+	BudgetVersionNumber   string     `json:"budgetVersionNumber"`
+	TaskName              string     `json:"taskName"`
+	Item                  Item       `json:"item"`
 }
 
 type Item struct {
@@ -96,6 +98,11 @@ type Stage struct {
 	Name      string `json:"name"`
 	StageName string `json:"stageName"`
 	Token     string `json:"token"`
+}
+
+type Exposition struct {
+	Name    string `json:"name"`
+	Edition string `json:"edition"`
 }
 
 type User struct {
