@@ -13,7 +13,6 @@ type Company struct {
 
 type Contact struct {
 	ContactToken string       `json:"contactToken"`
-	Version      int          `bson:"version"`
 	Activities   []Activities `json:"activities"`
 }
 
