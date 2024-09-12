@@ -53,6 +53,8 @@ type DataActivities struct {
 	TokenBudgetVersion        string `json:"tokenBudgetVersion"`
 	TokenBudgetOption         string `json:"tokenBudgetOption"`
 	TokenPreAccreditation     string `json:"tokenPreAccreditation"`
+	TokenEdition              string `json:"tokenEdition"`
+	TokenExposition           string `json:"tokenExposition"`
 }
 
 type Budget struct {
