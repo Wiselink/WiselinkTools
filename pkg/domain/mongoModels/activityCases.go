@@ -44,7 +44,7 @@ const (
 	PRODUCT_COLLECTED             ActivityType = "PRODUCT_COLLECTED"
 	PRODUCT_NOTE_PRIVATE          ActivityType = "PRODUCT_NOTE_PRIVATE"
 	PRODUCT_NOTE_SHARED           ActivityType = "PRODUCT_NOTE_SHARED"
-	RECOLECTED_ITEM               ActivityType = "RECOLECTED_ITEM"
+	RECOLLECTED_ITEM              ActivityType = "RECOLLECTED_ITEM"
 	SERVICE_COLLECTED             ActivityType = "SERVICE_COLLECTED"
 	SERVICE_NOTE_PRIVATE          ActivityType = "SERVICE_NOTE_PRIVATE"
 	SERVICE_NOTE_SHARED           ActivityType = "SERVICE_NOTE_SHARED"
