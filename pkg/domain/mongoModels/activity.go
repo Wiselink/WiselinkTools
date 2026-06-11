@@ -55,6 +55,12 @@ type DataActivities struct {
 	TokenPreAccreditation     string `json:"tokenPreAccreditation"`
 	TokenEdition              string `json:"tokenEdition"`
 	TokenExposition           string `json:"tokenExposition"`
+	// spec 0006 — payload de BUSINESS_ACTIVE_BUDGET_CHANGED (aditivos, con omitempty para
+	// no engordar el resto de los documentos): presupuesto activo anterior/nuevo y montos.
+	FromBudgetToken string  `json:"fromBudgetToken,omitempty"`
+	ToBudgetToken   string  `json:"toBudgetToken,omitempty"`
+	FromAmount      float64 `json:"fromAmount,omitempty"`
+	ToAmount        float64 `json:"toAmount,omitempty"`
 }
 
 type Budget struct {
