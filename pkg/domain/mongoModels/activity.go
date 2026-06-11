@@ -55,12 +55,14 @@ type DataActivities struct {
 	TokenPreAccreditation     string `json:"tokenPreAccreditation"`
 	TokenEdition              string `json:"tokenEdition"`
 	TokenExposition           string `json:"tokenExposition"`
-	// spec 0006 — payload de BUSINESS_ACTIVE_BUDGET_CHANGED (aditivos, con omitempty para
-	// no engordar el resto de los documentos): presupuesto activo anterior/nuevo y montos.
-	FromBudgetToken string  `json:"fromBudgetToken,omitempty"`
-	ToBudgetToken   string  `json:"toBudgetToken,omitempty"`
-	FromAmount      float64 `json:"fromAmount,omitempty"`
-	ToAmount        float64 `json:"toAmount,omitempty"`
+	// spec 0006 — payload de BUSINESS_ACTIVE_BUDGET_CHANGED (aditivos): presupuesto activo
+	// anterior/nuevo y montos. El tag bson lleva omitempty porque el driver Mongo NO lee el
+	// tag json — sin él, estos campos se persistirían vacíos en TODOS los documentos de
+	// actividad (el resto del struct tiene ese problema; lo aborda T2).
+	FromBudgetToken string  `json:"fromBudgetToken,omitempty" bson:"frombudgettoken,omitempty"`
+	ToBudgetToken   string  `json:"toBudgetToken,omitempty" bson:"tobudgettoken,omitempty"`
+	FromAmount      float64 `json:"fromAmount,omitempty" bson:"fromamount,omitempty"`
+	ToAmount        float64 `json:"toAmount,omitempty" bson:"toamount,omitempty"`
 }
 
 type Budget struct {

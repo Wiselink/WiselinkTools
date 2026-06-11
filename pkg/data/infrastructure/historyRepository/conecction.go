@@ -25,6 +25,9 @@ func (h *HistoricRepositoryObj) GetConeccion() (*mongo.Database, *mongo.Client, 
 
 	err = client.Ping(ctx, nil)
 	if err != nil {
+		// spec 0006: cerrar el client conectado antes de salir — sin esto, cada intento
+		// con Mongo caído filtraba un client (y sus goroutines) que nunca se desconectaba.
+		_ = client.Disconnect(context.Background())
 		return nil, nil, err
 	}
 
@@ -33,6 +36,7 @@ func (h *HistoricRepositoryObj) GetConeccion() (*mongo.Database, *mongo.Client, 
 	// Ensure index on companyToken for faster lookups
 	idx := mongo.IndexModel{Keys: bson.D{{Key: "companytoken", Value: 1}}}
 	if _, err := database.Collection("activities").Indexes().CreateOne(ctx, idx); err != nil {
+		_ = client.Disconnect(context.Background())
 		return nil, nil, err
 	}
 
