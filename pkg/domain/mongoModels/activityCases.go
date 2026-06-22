@@ -37,6 +37,8 @@ const (
 	COMMERCIAL_ATTENTION_CREATED   ActivityType = "COMMERCIAL_ATTENTION_CREATED"
 	CONTACT_AGENDA_CREATED         ActivityType = "CONTACT_AGENDA_CREATED"
 	CONTACT_CREATED                ActivityType = "CONTACT_CREATED"
+	CONTACT_DATA_UPDATED           ActivityType = "CONTACT_DATA_UPDATED" // spec 0012: se editó/agregó/borró un dato offline del contacto (datos B2C / sector / representante)
+	CONTACT_DELETED                ActivityType = "CONTACT_DELETED"      // spec 0012: baja (soft delete) del contacto entero
 	LINE_COLLECTED                 ActivityType = "LINE_COLLECTED"
 	LINE_NOTE_PRIVATE              ActivityType = "LINE_NOTE_PRIVATE"
 	LINE_NOTE_SHARED               ActivityType = "LINE_NOTE_SHARED"
